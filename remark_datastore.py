@@ -20,6 +20,7 @@ def ReadRemarks(user_id):
 
   LogLastGet(user_id)
 
+<<<<<<< HEAD
   remark_infos = []
   for remark in Remark.query(
       Remark.timestamp >= start_time).order(Remark.timestamp).fetch():
@@ -27,6 +28,14 @@ def ReadRemarks(user_id):
     text = remark.text
     color = 'red'  # TODO(pep-students) Make messages appear a random color.
     remark_infos.append((user, text, color))
+=======
+  # TODO(pep-students) Make messages appear a random color.
+  remark_infos = [
+      (remark.user, remark.text, 'black')
+      for remark
+      in Remark.query(
+          Remark.timestamp >= start_time).order(Remark.timestamp).fetch()]
+>>>>>>> c19a324c6ddd8e924c8cdb60d8e711ba9026ee78
   return remark_infos
 
 

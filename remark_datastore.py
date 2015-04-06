@@ -26,7 +26,7 @@ def ReadRemarks(user_id):
       for remark
       in Remark.query(
           Remark.timestamp >= start_time).order(Remark.timestamp).fetch()]
->>>>>>> c19a324c6ddd8e924c8cdb60d8e711ba9026ee78
+
   return remark_infos
 
 
